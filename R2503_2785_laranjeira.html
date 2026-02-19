@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morgado - Ular Design Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!------------------------Header e Navegação----------->
+    <header id="mainHeader">
+        <nav id="mainNav">
+            <div class="nav-links-desktop">
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <div class="logo">
+                    <a href="MainPage.html"><img src="Logo_Trevo.png" alt="Ular"></a>
+                </div>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+           
+               
+
+            <div class="mobile-logo-button" onclick="toggleMenu()">
+                <img src="Logo_Trevo.png" alt="Ular">
+            <div class="menu-indicator-wrapper">
+            <span class="menu-text-indicator">menu</span>
+                <div class="menu-arrow">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!------Mobile version-->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="MainPage.html">Main Page</a>
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+        </nav>
+    </header>
+<!------------------------Fim Header e Navegação----------->
+
+<!------------------------Botão para voltar portfolio----------->
+    <a href="Portfolio.html" class="back-nav-floating">
+        <div class="back-nav-sphere">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span class="back-nav-text">Portfolio</span>
+        </div>
+    </a>
+<!------------------------Fim Botão para voltar portfolio----------->
+
+
+    <main class="project-page-content">
+        
+        <div class="project-intro-section">
+            <div class="project-header-layout">
+                <div class="project-logo-box">
+                    <img src="R2503_2785_01_01.png" alt="Laranjeira">
+                </div>
+                <div class="status-stamp-box">
+                    <img src="In the making.png" alt="">
+                </div>
+            </div>
+
+ <div class="project-intro-grid">
+    <div class="intro-image-container">
+        <video class="project-video" autoplay muted loop playsinline>
+            <source src="R2503_2785_02_01_01.mov" type="video/mp4">
+        </video>
+    </div>
+    <div class="intro-text-container">
+        <p>
+        This project involved the structural conversion of a former single-family house into <strong>two independent one-bedroom apartments</strong>. The intervention focused on creating compact yet highly functional living spaces of 25 m² and 28 m².</p>
+
+        <p>
+        A consistent design language was applied to both units to <strong>maximise every square metre</strong>. This approach ensures visual continuity while enhancing the daily functionality of these boutique dwellings.</p>
+
+        <p>
+        The project was supported by <strong>3D visualisations</strong> to accurately communicate the proposed layouts, material finishes, and the overall spatial outcome of the conversion.</p>
+
+       <p class="status-highlight">Project currently in the making. We can't wait to show you the final result!</p>
+</div>
+
+</main>
+
+
+
+
+<footer class="footer">
+  <div class="footer-overlay">
+
+    <div class="footer-left">
+      <a href="Contact us" class="contact-us">
+        <img src="contact us.png" alt="Contact us">
+      </a>
+
+      <div class="email">
+        <img src="email_logo.png" alt="Email">
+        <a>ular.designstudio@gmail.com</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/ular.designstudio" target="_blank">
+          <img src="logo_instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@ular.designstudio" target="_blank">
+          <img src="logo_tiktok.png" alt="TikTok">
+        </a>
+
+        <span class="social-text">ular.designstudio</span>
+      </div>
+      
+      
+    </div>
+
+    <div class="footer-right">
+      <img src="Ular_logo_primario.png" alt="Ular Design Studio">
+    </div>
+
+  </div>
+</footer>
+
+
+<!-------------------Javascript---------------------> 
+    <script>
+        //------------------Header e Navegação
+        // Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const header = document.getElementById("mainHeader");
+            menu.classList.toggle("open");
+            header.classList.toggle("menu-open");
+        }
+        //------------------Fim Header e Navegação
+
+        // Lógica Carrossel horizontal
+        const track = document.getElementById('carouselTrack');
+        const counter = document.getElementById('carouselCounter');
+        const totalImages = 2; 
+
+        function scrollCarousel(direction) {
+            const scrollAmount = track.clientWidth; 
+            track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        track.addEventListener('scroll', () => {
+            const currentIndex = Math.round(track.scrollLeft / track.clientWidth) + 1;
+            counter.innerText = `${currentIndex} / ${totalImages}`;
+        });
+
+// .----------------------Lógica Carrossel vertical
+        // Função para as setas
+function moveMixed(direction) {
+    const track = document.getElementById('mixedTrack');
+    const step = track.offsetWidth;
+    track.scrollBy({ left: direction * step, behavior: 'smooth' });
+}
+
+// Função para atualizar o contador durante o scroll
+document.getElementById('mixedTrack').addEventListener('scroll', function() {
+    const track = this;
+    const counter = document.getElementById('mixedCounter');
+    const images = track.querySelectorAll('img');
+    
+    // Calcula a página atual baseada na posição do scroll
+    const currentIndex = Math.round(track.scrollLeft / track.offsetWidth) + 1;
+    counter.innerText = currentIndex + ' / ' + images.length;
+});
+    </script>
+</body>
+</html>

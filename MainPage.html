@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ular Design Studio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--------Googlefonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!------------------------Header e Navegação----------->
+    <header id="mainHeader">
+        <nav id="mainNav">
+            <div class="nav-links-desktop">
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <div class="logo">
+                    <a href="MainPage.html"><img src="Logo_Trevo.png" alt="Ular"></a>
+                </div>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+           
+               
+
+            <div class="mobile-logo-button" onclick="toggleMenu()">
+                <img src="Logo_Trevo.png" alt="Ular">
+            <div class="menu-indicator-wrapper">
+            <span class="menu-text-indicator">menu</span>
+                <div class="menu-arrow">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!------Mobile version-->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="MainPage.html">Main Page</a>
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+        </nav>
+    </header>
+<!------------------------Fim Header e Navegação----------->
+
+
+
+<section class="hero">
+    <video autoplay muted loop playsinline preload="auto">
+        <source src="video_introducao_480p.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+        <img src="Ular_logo_primario.png" alt="Ular Design Studio" class="hero-logo">
+        <p>Spaces in the making</p>
+    </div>
+
+    <a href="#main-intro" class="discover-more">
+        <span>Discover more</span>
+        <div class="scroll-arrow-mini">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </a>
+</section>
+
+<section class="main-intro" id="main-intro">
+    <div class="intro-content">
+        <h2 class="reveal-text">Spaces made from us, to you </h2>
+        <p class="fade-in-up">
+            At <strong>Ular Design Studio</strong>, we blend functionality with soul. 
+            From quiet residential retreats to vibrant commercial spaces, our approach 
+            is always human-centered and tailored to your unique rhythm.
+        </p>
+        
+        <a href="OurServices.html" class="discover-more-btn">
+            <span>Discover our services</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+    </div>
+</section>
+
+<section class="home-carousel-section">
+    <div class="carousel-container">
+        <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+
+        <div class="carousel-track" id="homeTrack">
+            <div class="carousel-card"><img src="R2501_2785_Morgado_02_01.jpg"></div>
+            <div class="carousel-card"><img src="C2410_2530_impostor_02_01.jpeg"></div>
+            <div class="carousel-card"><img src="C2410_2530_impostor_06.jpg"></div>
+            <div class="carousel-card"><img src="R2402_6731_Lux_02_01.jpeg"></div>
+            <div class="carousel-card">
+            <img src="R2501_2785_Morgado_05_01.jpeg">
+            <a href="portfolio.html" class="more-work-link">
+              <span class="text-wrapper">More of our work →</span>
+           </a>
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!----------portfolio carrosel-->
+
+
+
+
+
+
+
+<!-------------------Footer-->
+<footer class="footer">
+  <div class="footer-overlay">
+
+    <div class="footer-left">
+      <a href="Contact us" class="contact-us">
+        <img src="contact us.png" alt="Contact us">
+      </a>
+
+      <div class="email">
+        <img src="email_logo.png" alt="Email">
+        <a>ular.designstudio@gmail.com</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/ular.designstudio" target="_blank">
+          <img src="logo_instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@ular.designstudio" target="_blank">
+          <img src="logo_tiktok.png" alt="TikTok">
+        </a>
+
+        <span class="social-text">ular.designstudio</span>
+      </div>
+      
+      
+    </div>
+
+    <div class="footer-right">
+      <img src="Ular_logo_primario.png" alt="Ular Design Studio">
+    </div>
+
+  </div>
+</footer>
+
+
+
+<!--------javascript-->
+<script>
+
+   //------------------Header e Navegação
+        // Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const header = document.getElementById("mainHeader");
+            menu.classList.toggle("open");
+            header.classList.toggle("menu-open");
+        }
+    //------------------Fim Header e Navegação
+
+//-------------------Carrossel
+function moveCarousel(direction) {
+    const track = document.getElementById('homeTrack');
+    if (!track) return;
+
+    // Obtém a largura de um card dinamicamente
+    const card = track.querySelector('.carousel-card');
+    if (!card) return;
+
+    // Largura do card + o gap de 40px definido no CSS
+    const scrollStep = card.offsetWidth + 40; 
+
+    track.scrollBy({
+        left: direction * scrollStep,
+        behavior: 'smooth'
+    });
+}
+
+
+
+
+ 
+</script>
+
+
+</body>
+</html>

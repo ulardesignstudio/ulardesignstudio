@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morgado - Ular Design Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!------------------------Header e Navegação----------->
+    <header id="mainHeader">
+        <nav id="mainNav">
+            <div class="nav-links-desktop">
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <div class="logo">
+                    <a href="MainPage.html"><img src="Logo_Trevo.png" alt="Ular"></a>
+                </div>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+           
+               
+
+            <div class="mobile-logo-button" onclick="toggleMenu()">
+                <img src="Logo_Trevo.png" alt="Ular">
+            <div class="menu-indicator-wrapper">
+            <span class="menu-text-indicator">menu</span>
+                <div class="menu-arrow">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!------Mobile version-->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="MainPage.html">Main Page</a>
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+        </nav>
+    </header>
+<!------------------------Fim Header e Navegação----------->
+
+<!------------------------Botão para voltar portfolio----------->
+    <a href="Portfolio.html" class="back-nav-floating">
+        <div class="back-nav-sphere">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span class="back-nav-text">Portfolio</span>
+        </div>
+    </a>
+<!------------------------Fim Botão para voltar portfolio----------->
+
+   <main class="project-page-content">
+    
+    <section class="project-intro-section">
+        <div class="project-header-layout">
+            <div class="project-logo-box">
+                <img src="R2501_2785_Morgado_01_01.png" alt="Morgado">
+            </div>
+            <div class="status-stamp-box">
+                <img src="In the making.png" alt="In the making">
+            </div>
+        </div>
+
+        <div class="project-intro-grid">
+            <div class="intro-image-container">
+                <img src="R2501_2785_Morgado_02_01_522kb.jpg" alt="Morgado Render">
+            </div>
+            <div class="intro-text-container">
+                <p>The Morgado project consists of a premium, full-service interior design development for a two-bedroom apartment and its private garden, tailored for a young couple.</p>
+                <p>Our intervention covered every stage of the process, from initial layout optimization to the complete interior decoration of the kitchen, living room, bedroom, closet, and bathrooms, including the outdoor area.</p>
+                <p>The project involved the creation of detailed moodboards, extensive furniture research, and personalized guidance in every selection to ensure a cohesive and high-end result.</p>
+                <p class="status-highlight">Project currently in the making. We can't wait to show you the final result!</p>
+            </div>
+        </div>        
+    </section>
+
+    <section class="project-carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+            <img src="R2501_2785_Morgado_02_01_522kb.jpg" alt="01">
+            <img src="R2501_2785_Morgado_02_02.jpeg" alt="02">
+            <img src="R2501_2785_Morgado_02_03.png" alt="03">
+            <img src="R2501_2785_Morgado_02_04.png" alt="04">
+            <img src="R2501_2785_Morgado_02_05.png" alt="05">
+            <img src="R2501_2785_Morgado_02_06.jpeg" alt="06">
+            <img src="R2501_2785_Morgado_02_08.png" alt="08">
+            <img src="R2501_2785_Morgado_02_09.jpeg" alt="09">
+            <img src="R2501_2785_Morgado_02_010.jpeg" alt="10">
+            <img src="R2501_2785_Morgado_02_011.jpeg" alt="11">
+        </div>
+        <div class="carousel-counter" id="carouselCounter">1 / 10</div>
+        <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#10094;</button>
+        <button class="carousel-arrow right" onclick="scrollCarousel(1)">&#10095;</button>
+    </section>
+
+    <section class="project-intro-section">
+        <div class="project-intro-grid">
+            <div class="intro-image-container">
+                <img src="R2501_2785_Morgado_03.png" alt="Morgado Render">
+            </div>
+            <div class="intro-text-container">
+                <p>This project involved the spatial redesign of a 56m apartment, transforming it into a modern, open-concept. The intervention merged the kitchen and living area into a single 36m social space, complemented by two 11m bedrooms and a 4m bathroom.</p>
+                <p>The standout feature is the seamless connection to the 32m terrace; the installation of expansive new windows effectively 'doubles' the home's feel, blurring the line between interior and exterior.</p>
+                <p>The project involved the creation of detailed moodboards, extensive furniture research, and personalized guidance in every selection to ensure a cohesive and high-end result.</p>
+            </div>
+        </div>        
+    </section>
+
+    <section class="project-video-dual-grid">
+        <div class="video-item-container">
+            <video autoplay muted loop playsinline class="project-video">
+                <source src="R2501_2785_Morgado_04_01.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-item-container">
+            <video autoplay muted loop playsinline class="project-video">
+                <source src="R2501_2785_Morgado_04_02.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section class="project-carousel-container">
+        <div class="carousel-track" id="bungalowTrack">
+            <img src="R2501_2785_Morgado_05_01.jpeg" alt="01">
+            <img src="R2501_2785_Morgado_05_02.jpg" alt="02">
+        </div>
+        <div class="carousel-counter" id="bungalowCounter">1 / 2</div>
+        <button class="carousel-arrow left" onclick="scrollBungalow(-1)">&#10094;</button>
+        <button class="carousel-arrow right" onclick="scrollBungalow(1)">&#10095;</button>
+    </section>
+
+</main>
+
+
+
+
+<footer class="footer">
+  <div class="footer-overlay">
+
+    <div class="footer-left">
+      <a href="Contact us" class="contact-us">
+        <img src="contact us.png" alt="Contact us">
+      </a>
+
+      <div class="email">
+        <img src="email_logo.png" alt="Email">
+        <a>ular.designstudio@gmail.com</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/ular.designstudio" target="_blank">
+          <img src="logo_instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@ular.designstudio" target="_blank">
+          <img src="logo_tiktok.png" alt="TikTok">
+        </a>
+
+        <span class="social-text">ular.designstudio</span>
+      </div>
+      
+      
+    </div>
+
+    <div class="footer-right">
+      <img src="Ular_logo_primario.png" alt="Ular Design Studio">
+    </div>
+
+  </div>
+</footer>
+
+
+<!-------------------Javascript---------------------> 
+    <script>
+        //------------------Header e Navegação
+        // Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const header = document.getElementById("mainHeader");
+            menu.classList.toggle("open");
+            header.classList.toggle("menu-open");
+        }
+        //------------------Fim Header e Navegação
+
+        // Lógica Carrossel
+        const track = document.getElementById('carouselTrack');
+        const counter = document.getElementById('carouselCounter');
+        const totalImages = 10; 
+
+        function scrollCarousel(direction) {
+            const scrollAmount = track.clientWidth; 
+            track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        track.addEventListener('scroll', () => {
+            const currentIndex = Math.round(track.scrollLeft / track.clientWidth) + 1;
+            counter.innerText = `${currentIndex} / ${totalImages}`;
+        });
+
+        //Segundo carrossel
+        function scrollBungalow(direction) {
+    const track = document.getElementById('bungalowTrack');
+    const counter = document.getElementById('bungalowCounter');
+    const totalImages = 2; // Agora são apenas 2
+    
+    // Calcula a largura de uma imagem
+    const width = track.offsetWidth;
+    
+    // Faz o scroll
+    track.scrollBy({
+        left: direction * width,
+        behavior: 'smooth'
+    });
+
+    // Lógica para atualizar o contador (opcional mas recomendado)
+    // Espera um pouco pelo scroll terminar para calcular a posição
+    setTimeout(() => {
+        const currentScroll = track.scrollLeft;
+        const index = Math.round(currentScroll / width) + 1;
+        counter.innerText = `${index} / ${totalImages}`;
+    }, 300);
+}
+    </script>
+</body>
+</html>

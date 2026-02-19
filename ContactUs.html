@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ular Design Studio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--------Googlefonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!------------------------Header e Navegação----------->
+    <header id="mainHeader">
+        <nav id="mainNav">
+            <div class="nav-links-desktop">
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <div class="logo">
+                    <a href="MainPage.html"><img src="Logo_Trevo.png" alt="Ular"></a>
+                </div>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+           
+               
+
+            <div class="mobile-logo-button" onclick="toggleMenu()">
+                <img src="Logo_Trevo.png" alt="Ular">
+            <div class="menu-indicator-wrapper">
+            <span class="menu-text-indicator">menu</span>
+                <div class="menu-arrow">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!------Mobile version-->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="MainPage.html">Main Page</a>
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+        </nav>
+    </header>
+<!------------------------Fim Header e Navegação----------->
+
+<!------------------------Formulário---------------------------------->
+<main class="contact-page">
+    <div class="contact-wrapper">
+        
+        <div class="contact-info">
+            <h1>Let's Connect</h1>
+            <p>We're excited to hear about your vision and explore how Ular Design Studio can help bring it to life.</p>
+            <p>Please fill out the inquiry form below with a few details about your project, and we’ll get back to you within two business days.</p>
+
+            <div class="contact-details">
+                <p><strong>Contact</strong><br>ular.designstudio@gmail.com</p>
+            </div>
+        </div>
+
+        <!------------------Formulário-->
+       <div class="contact-form-container">
+    <form class="minimal-form" action="https://formspree.io/f/mjgeekan" method="POST">
+        <div class="form-row">
+            <div class="form-group">
+                <label>First Name*</label>
+                <input type="text" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label>Last Name*</label>
+                <input type="text" name="last_name" required>
+            </div>
+            </div>
+
+            <div class="form-group full-width">
+            <label>Email Address*</label>
+            <input type="email" name="email" required>
+            </div>
+
+            <div class="form-row">
+            <div class="form-group">
+                <label>Phone No.</label>
+                <input type="tel" name="phone">
+            </div>
+            <div class="form-group">
+                <label>Subject*</label>
+                <input type="text" name="subject" required>
+            </div>
+            </div>
+
+            <div class="form-group full-width">
+            <label>Tell us a little about your space*</label>
+            <textarea name="message" rows="3" required></textarea>
+             </div>
+
+            <div class="button-container">
+            <button type="submit" class="btn-submit">
+                Submit <span class="double-arrow">»</span>
+            </button>
+            </div>
+    </form>
+    </div>
+
+
+</main>
+
+<!------------------Separador entre formulário e Faq's-->
+<div class="divider-container">
+    <img src="bola separacao pagina.png" alt="Ular Logo" class="ular-ball">
+</div>
+
+
+<!------------------------------FAQ's-->
+<section class="faq-section" id="faq">
+    <div class="faq-header">
+        <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-grid">
+        <div class="faq-column">
+            <div class="faq-item">
+                <button class="faq-question">What interior design services do you provide? <span class="arrow">∨</span></button>
+                <div class="faq-answer">
+                    <p>We offer tailored interior design services, from initial concept development to detailed design proposals and project support, for both residential and commercial spaces.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is your approach to the design process? <span class="arrow">∨</span></button>
+                <div class="faq-answer">
+                    <p>We help define your style through discussion, references and careful analysis of your preferences and requirements.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can existing furniture or pieces be incorporated into the project? <span class="arrow">∨</span></button>
+                <div class="faq-answer">
+                    <p>Yes. Whenever suitable, we incorporate existing furniture or décor to ensure continuity, sustainability and a coherent final result.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-column">
+            <div class="faq-item">
+                <button class="faq-question">How long does an interior design project usually take? <span class="arrow">∨</span></button>
+                <div class="faq-answer">
+                    <p>Project timelines vary depending on scale and complexity. Timeframes are defined clearly at the outset of each project.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do you offer online or remote interior design services? <span class="arrow">∨</span></button>
+                <div class="faq-answer">
+                    <p>Yes. We provide remote design services for clients in any location. We are based in Luxembourg and Portugal, where on-site visits are available.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">I’m not sure about my personal style. Can you still work with me? <span class="arrow">∨</span></button>
+                <div class="faq-answer">
+                    <p>Absolutely. We help define your style through discussion, references and careful analysis of your preferences and requirements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--------------Footer-->
+<footer class="footer">
+  <div class="footer-overlay">
+
+    <div class="footer-left">
+      <a href="Contact us" class="contact-us">
+        <img src="contact us.png" alt="Contact us">
+      </a>
+
+      <div class="email">
+        <img src="email_logo.png" alt="Email">
+        <a>ular.designstudio@gmail.com</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/ular.designstudio" target="_blank">
+          <img src="logo_instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@ular.designstudio" target="_blank">
+          <img src="logo_tiktok.png" alt="TikTok">
+        </a>
+
+        <span class="social-text">ular.designstudio</span>
+      </div>
+      
+      
+    </div>
+
+    <div class="footer-right">
+      <img src="Ular_logo_primario.png" alt="Ular Design Studio">
+    </div>
+
+  </div>
+</footer>
+
+
+<!--------------Javascript-->
+<script>
+
+   //------------------Header e Navegação
+        // Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const header = document.getElementById("mainHeader");
+            menu.classList.toggle("open");
+            header.classList.toggle("menu-open");
+        }
+    //------------------Fim Header e Navegação
+
+    //movimento setas faqs
+        // Este código seleciona todas as perguntas do FAQ
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                // Quando clicas, ele procura o "pai" (o faq-item)
+                const faqItem = button.parentElement;
+                
+                // Ele adiciona ou retira a classe 'active' que criámos no CSS
+                faqItem.classList.toggle('active');
+            });
+        });
+
+    //-------------movimento bola-------------
+        window.addEventListener('scroll', function() {
+    // Seleciona a imagem da bola
+    const ball = document.querySelector('.ular-ball');
+    
+    // Obtém a posição atual do scroll
+    let rotation = window.scrollY;
+    
+    // Aplica a rotação. Podes multiplicar por 0.5 se quiseres que gire mais devagar
+    // ou por 2 se quiseres que gire muito rápido.
+    ball.style.transform = `rotate(${rotation * 0.5}deg)`;
+});
+    </script>
+
+
+
+</body>
+</html>

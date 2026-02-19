@@ -1,0 +1,1987 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  background-image: url("fundo_100ppi.png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  min-height: 100vh; /* Usa MIN-height e não height */
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  padding-top: 50px;
+  
+}
+/* ==========================================================================
+  HEADER
+   ========================================================================== */
+
+/* 1. BASE HEADER - Comum a todos */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0 40px 0;
+    background-color: #f4e8e4; 
+    
+    /* Teu Efeito de Desfoque */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* A Máscara para evitar a linha reta */
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    
+    transition: padding-bottom 0.4s ease;
+}
+
+.nav-links-desktop {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: center;
+}
+
+.nav-links-desktop a {
+    text-decoration: none;
+    color: #ad4640;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.logo img {
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Esconder elementos mobile por defeito no PC */
+.mobile-logo-button, .mobile-menu {
+    display: none;
+}
+
+/* 3. MOBILE - Ajustes específicos */
+@media (max-width: 768px) {
+    /* Esconde a nav bar de PC */
+    .nav-links-desktop {
+        display: none !important;
+    }
+
+    
+    /* Mostra o logo botão no telemóvel */
+    .mobile-logo-button {
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .mobile-logo-button img {
+        width: 35px;
+        height: auto;
+    }
+
+    /* Menu que desliza */
+    .mobile-menu {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    .mobile-menu.open {
+        max-height: 500px; 
+        opacity: 1;
+        padding-top: 30px;
+    }
+
+    /* ESTILO DOS LINKS NO TELEMÓVEL (Vermelhos e sem linha) */
+    .mobile-menu a {
+        text-decoration: none !important; /* Retira a linha */
+        color: #ad4640 !important;        /* Cor vermelha */
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Remove a máscara quando aberto para o menu ser legível */
+    header.menu-open {
+        -webkit-mask-image: none;
+        mask-image: none;
+        -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    }
+}
+
+
+
+/* Container que segura o Logo + Indicador */
+.mobile-logo-button {
+    display: none; /* Escondido no PC */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    cursor: pointer;
+}
+
+/* Alinha texto e seta lado a lado */
+.menu-indicator-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre a palavra e a seta */
+}
+
+/* Estilo da palavra menu - Mais fina e espaçada */
+.menu-text-indicator {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px; /* Mais espaço para parecer mais leve */
+    color: #ad4640;
+    font-weight: 300; /* Letra mais fina */
+    line-height: 1;
+}
+
+/* Estilo da seta - Também mais fina */
+.menu-arrow {
+    line-height: 0;
+    transition: transform 0.4s ease;
+}
+
+.menu-arrow svg {
+    stroke-width: 1.5; /* Seta com traço mais fino para combinar com a letra */
+}
+
+/* Rotação quando o menu abre */
+header.menu-open .menu-arrow {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .mobile-logo-button {
+        display: flex !important;
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.footer {
+  background: url("IMG_5888.jpg") center / cover no-repeat;
+  /* Removido height fixo para evitar cortes em mobile */
+  min-height: 400px; 
+}
+
+.footer-overlay {
+  background: rgba(244,232,228,0.85);
+  min-height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Mudança crucial: padding responsivo */
+  padding: 40px 5%; 
+  color: #ad4640;
+  box-sizing: border-box; /* Garante que o padding não estica a largura */
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-right img {
+  max-width: 220px; /* Impede que a imagem seja maior que o ecrã */
+  width: 100%;
+  height: auto;
+}
+
+.contact-us img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+}
+
+.contact-us {
+  display: inline-block;
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.email img {
+  width: 28px;
+  height: auto;
+}
+
+.email a {
+  color: #ad4640;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-socials img {
+  width: 28px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o rato: ativa a animação */
+.footer-socials img:hover {
+  animation: socialBounce 0.6s ease infinite;
+}
+
+/* Animação de saltito (estilo a que usamos nas setas) */
+@keyframes socialBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Altura do saltito */
+  }
+}
+
+.social-text {
+  font-size: 18px;
+  color: #ad4640;
+}
+
+/* --- AJUSTE PARA TELEMÓVEL --- */
+@media (max-width: 768px) {
+  .footer-overlay {
+    flex-direction: column; /* Empilha o conteúdo verticalmente */
+    text-align: center;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+
+  .footer-left {
+    align-items: center; /* Centra os ícones e o email */
+  }
+
+  .email {
+    justify-content: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Bola 2 AA a meio da página
+   ========================================================================== */
+
+.divider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 0;
+    width: 100%;
+    perspective: 1000px; /* Ajuda a manter a fluidez visual */
+}
+
+.ular-ball {
+    width: 80px;
+    height: auto;
+    will-change: transform; /* Otimiza a performance para o browser */
+    transition: transform 0.1s ease-out; /* Suaviza o movimento */
+}
+
+.divider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 0;
+    width: 100%;
+    perspective: 1000px; /* Ajuda a manter a fluidez visual */
+}
+
+.ular-ball {
+    width: 80px;
+    height: auto;
+    will-change: transform; /* Otimiza a performance para o browser */
+    transition: transform 0.1s ease-out; /* Suaviza o movimento */
+}
+
+
+/* ==========================================================================
+   MAIN PAGE
+   ========================================================================== */
+
+/*vídeo intro*/
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.40;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ad4640;
+}
+
+.hero-logo {
+  width: 350px;    
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-family: 'Gloock', serif;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.about {
+    padding: 120px 20%;
+    text-align: left;
+    color: #ad4640;
+}
+
+.about p {
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+.about h3 {
+    font-size: 22px;
+}
+
+
+/*----------Spaces from us to you---*/
+
+
+
+/* Estilo do Discover More */
+.discover-more {
+    position: absolute;
+    bottom: 100px; /* Distância do fundo */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ad4640; /* Teu tom terracota */
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+.discover-more span {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Animação da Seta */
+.scroll-arrow-mini {
+    animation: bounceMini 2s infinite;
+}
+
+@keyframes bounceMini {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(6px); }
+    60% { transform: translateY(3px); }
+}
+
+/* Esconder em ecrãs muito pequenos se tapar o conteúdo */
+@media (max-height: 600px) {
+    .discover-more { display: none; }
+}
+
+/* --- INTRODUÇÃO --- */
+.main-intro {
+    padding: 120px 5% 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.intro-content {
+    max-width: 850px; /* Mantém o texto elegante e fácil de ler */
+}
+
+.reveal-text {
+    font-family: 'Gloock', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    color: #ad4640;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    letter-spacing: -0.02em;
+}
+
+.fade-in-up {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ad4640;
+    opacity: 0.85;
+    margin-bottom: 40px;
+}
+
+.fade-in-up strong {
+    font-weight: 600;
+}
+
+/* Botão Dinâmico */
+.discover-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #ad4640;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.discover-more-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 30px; /* Começa pequeno */
+    height: 1.5px;
+    background: #ad4640;
+    transition: width 0.4s ease;
+}
+
+.discover-more-btn:hover::after {
+    width: 100%; /* Expande a linha ao passar o rato */
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #ad4640;
+    stroke-width: 2;
+    transition: transform 0.3s ease;
+}
+
+.discover-more-btn:hover .arrow-icon {
+    transform: translateX(8px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-intro { padding: 80px 20px 40px; }
+    .reveal-text { font-size: 36px; }
+}
+
+/* --- CARROSSEL --- */
+/* Carrossel main page ==========================================================================*/
+.home-carousel-section {
+    padding: 80px 0;
+    width: 100%;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1400px; /* Alinhamento largo */
+    margin: 0 auto;
+    padding: 0 70px; /* Espaço para as setas não taparem as fotos */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 40px !important; /* Espaçamento horizontal generoso entre fotos */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 15px 0; /* Evita cortar sombras ou cantos arredondados */
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-card {
+    /* Ocupa 1/3 do ecrã menos o espaço necessário para os gaps */
+    flex: 0 0 calc(33.333% - 27px) !important; 
+    scroll-snap-align: start;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 550px; /* Altura fixa para garantir que todas são iguais */
+    background-color: #f4e8e4;
+}
+
+.carousel-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Preenchimento total sem deformar */
+    display: block;
+}
+
+/* OVERLAY VERMELHO (Sempre Visível) */
+.more-work-link {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(173, 70, 64, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f4e8e4;
+    text-decoration: none;
+    font-family: 'Quicksand', serif;
+    font-size: 22px;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.text-wrapper {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.more-work-link:hover .text-wrapper {
+    transform: translateX(15px); /* Movimento da seta no hover */
+}
+
+/* SETAS DE NAVEGAÇÃO */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: #ad4640;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: #ad4640;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+/* Responsividade carrossel main page ==========================================================================*/
+@media (max-width: 1024px) {
+    .carousel-card {
+        flex: 0 0 calc(50% - 20px) !important; /* 2 fotos por ecrã em tablets */
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 0 20px;
+    }
+    
+    .carousel-track {
+        gap: 20px !important;
+    }
+
+    .carousel-card {
+        flex: 0 0 85% !important; /* 1 foto e um pouco da seguinte para convidar ao scroll */
+        height: 400px;
+    }
+
+    .carousel-btn {
+        display: none; /* Em mobile, o swipe com o dedo é o padrão */
+    }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   OUR SERVICES
+   ========================================================================== */
+
+/*------------------------------timeline*/
+/* Altura total da seção (define quanto tempo o utilizador tem de fazer scroll) */
+.timeline-section-height {
+height: 300vh;
+    /* Alteração aqui: Background agora é um gradiente que vai do bege para o transparente */
+    background: linear-gradient(
+        to bottom, 
+        #f4e8e4 95%, /* Cor sólida até 85% da altura */
+        transparent 100%             /* Desvanece totalmente até ao fim */
+    );
+    position: relative;
+    /* Margem inferior para dar espaço até à bola */
+    margin-bottom: 100px; 
+}
+
+
+/* O container que fica "preso" no ecrã enquanto a imagem desliza */
+.timeline-sticky-container {
+    position: sticky;
+    top: 50px;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Centraliza a imagem verticalmente */
+    overflow: hidden;
+}
+
+/* O trilho que será movido pelo JavaScript */
+.timeline-horizontal-track {
+    position: absolute;
+    left: 0;
+    height: auto;
+    display: flex;
+    will-change: transform;
+}
+
+.timeline-image {
+    height: 120vh; /* Ajuste o tamanho da imagem no ecrã */
+    width: auto;
+    padding: 0 5vw;
+}
+
+
+
+
+/*----------------our expertise titulo*/
+.services-expertise-header {
+    width: 100%;
+    max-width: 1400px; /* Mesma largura das pastas para alinhar */
+    margin: 60px auto 40px; /* Centrado e com espaçamento em relação à pasta */
+    padding: 0 5%; /* Padding lateral igual ao das pastas */
+    box-sizing: border-box;
+}
+
+.services-expertise-subtitle {
+    display: block;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #ad4640; /* Cor terracota para manter a identidade */
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.services-expertise-title {
+    font-size: clamp(32px, 5vw, 48px); /* Escala conforme o ecrã */
+    color: #333;
+    margin: 0;
+    font-weight: 400;
+    position: relative;
+}
+
+    /* Ajuste Responsivo */
+    @media (max-width: 768px) {
+    .services-expertise-header {
+        text-align: left;
+        margin-top: 40px;
+    }
+}
+
+
+/*-----------------------------Contentores-------------------*/
+/* --- FIX DE FLUXO --- */
+.services-top-spacer {
+    clear: both;
+    height: 100px;
+    width: 100%;
+}
+
+/* --- CONTENTOR MESTRE --- */
+.services-master-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto !important;
+    padding: 20px 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    position: relative;
+    z-index: 10;
+}
+
+/* --- CABEÇALHO --- */
+.services-expertise-header {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.services-expertise-subtitle {
+    display: block;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #ad4640;
+    margin-bottom: 10px;
+}
+
+.services-expertise-title {
+    font-family: 'Gloock', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    color: #333;
+    margin: 0;
+}
+
+/* --- PASTAS (TABS) --- */
+.services-tabs-container {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+input[type="radio"] { display: none; }
+
+.tab-label {
+    display: inline-block;
+    padding: 18px 35px;
+    background: rgba(173, 70, 64, 0.03); /* Vermelho bem suave */
+    color: #b37b78;
+    border-radius: 15px 15px 0 0;
+    cursor: pointer;
+    font-family: 'Quicksand', serif;
+    transition: 0.3s ease;
+    margin-right: 5px;
+    border: 1px solid #f4e8e4 ;
+}
+
+input[type="radio"]:checked + .tab-label {
+    background: rgba(173, 70, 64, 0.1);
+    font-weight: 500;
+    color: #ad4640;
+}
+
+.tab-content-wrapper {
+    width: 100%;
+    background: rgba(173, 70, 64, 0.1); /* Vermelho suave */
+    border-radius: 0 30px 30px 30px;
+    padding: 60px;
+    color: #333;
+    transition: all 0.5s ease;
+    box-sizing: border-box;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.tab-content-wrapper h2 {
+    font-family: 'Gloock', serif; /* Ex: 'Playfair Display', serif */
+    font-size: 32px;      /* Podes ajustar o tamanho aqui */
+    font-weight: 500;     /* Ajusta a espessura */
+    margin-bottom: 20px;  /* Espaço para o texto de baixo */
+    letter-spacing: -0.5px; /* Opcional: para um ar mais elegante */
+    color: rgba(173, 70, 64, 1);
+}
+
+
+
+
+
+.content { display: none; }
+#service1:checked ~ .tab-content-wrapper #content1,
+#service2:checked ~ .tab-content-wrapper #content2 { display: block; }
+
+/* --- GRELHA DE CARTÕES --- */
+.services-expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.services-expertise-card {
+    background: rgba(173, 70, 64, 0.1); /* Vermelho suave inicial */
+    padding: 45px;
+    border-radius: 40px;
+    transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* Hover do Cartão: Vermelho sólido e Letras Brancas */
+.services-expertise-card:hover {
+    background: rgba(173, 70, 64, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px #f4e8e4;
+}
+
+.services-expertise-card h3 {
+    font-family: 'Gloock', serif;
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #333333;
+    transition: color 0.4s;
+    text-align: justify;
+}
+
+.services-expertise-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    transition: color 0.4s;
+}
+
+
+/*---------Let's connect botão---------*/
+/* CONTAINER MESTRE - Adicionei mais padding ao fundo */
+.services-master-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto !important;
+    padding: 20px 0 150px 0; /* Aumentei de 100px para 150px no fundo */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    position: relative;
+    z-index: 10;
+}
+
+/* CONTAINER DO BOTÃO - Com margem extra */
+.cta-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;      /* Espaço entre os cartões e o botão */
+    padding-bottom: 60px;  /* Espaço extra abaixo do botão antes do fim da secção */
+}
+
+/* BOTÃO LET'S CONNECT - Estilo Contorno com Animação Infinita */
+.work-with-us-btn {
+    background-color: transparent; /* Fundo transparente */
+    color: #ad4640 !important;    /* Texto e contorno na cor de destaque */
+    border: 2px solid #ad4640;    /* Apenas o contorno */
+    padding: 15px 70px;
+    border-radius: 50px;
+    font-size: 17px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Criando as setas e aplicando a animação contínua */
+.work-with-us-btn::after {
+    content: '»'; 
+    font-size: 22px;
+    display: inline-block;
+    /* Nome da animação | duração | modo | infinita */
+    animation: moveArrow 1.5s infinite ease-in-out;
+}
+
+/* Definição do movimento da animação */
+@keyframes moveArrow {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(8px); } /* Desliza para a direita */
+    100% { transform: translateX(0); }  /* Volta à base */
+}
+
+/* HOVER: Opcional - Inverter as cores quando passa o rato */
+.work-with-us-btn:hover {
+    background-color: #ad4640;
+    color: #ffffff !important;
+   
+}
+
+
+
+/* ==========================================================================
+   ABOUT US
+   ========================================================================== */
+
+.divider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 0;
+    width: 100%;
+    perspective: 1000px; /* Ajuda a manter a fluidez visual */
+}
+
+.ular-ball {
+    width: 80px;
+    height: auto;
+    will-change: transform; /* Otimiza a performance para o browser */
+    transition: transform 0.1s ease-out; /* Suaviza o movimento */
+}
+/* Contentor Geral */
+.about-container {
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 40px;
+    font-family: 'Inter', sans-serif;
+    color: #ad4640; /* Teu tom terracota */
+}
+
+/* --- SECÇÃO INTRO --- */
+.about-intro {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    margin-bottom: 100px;
+    text-align: justify;
+}
+
+.about-intro-image {
+    flex: 1;
+}
+
+.about-intro-image img {
+    width: 100%;
+    border-radius: 10px; /* Ajusta conforme preferires */
+    display: block;
+    filter: grayscale(100%)
+}
+
+.about-intro-text {
+    flex: 1;
+}
+
+.about-intro-text h1 {
+    font-family: 'Gloock', serif;
+    font-size: 50px;
+    margin-bottom: 30px;
+    line-height: 1.1;
+}
+
+.about-intro-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* --- SECÇÃO BIOS --- */
+.about-bios {
+    display: flex;
+    gap: 50px;
+}
+
+.bio-card {
+    flex: 1;
+}
+
+.bio-image {
+    width: 100%;
+    margin-bottom: 30px;
+    filter: grayscale(100%)
+}
+
+.bio-image img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Garante que as fotos sejam quadradas */
+    object-fit: cover;
+    border-radius: 30px; /* Arredondamento igual ao das tuas capas */
+}
+
+.bio-card h2 {
+    font-family: 'Gloock', serif;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.bio-card p {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* --- RESPONSIVIDADE (PARA TELEMÓVEL) --- */
+@media (max-width: 850px) {
+    .about-intro, .about-bios {
+        flex-direction: column;
+    }
+    
+    .about-intro-image, .about-intro-text, .bio-card {
+        width: 100%;
+    }
+
+    .about-intro-text h1 {
+        font-size: 40px;
+    }
+}
+
+
+
+/* Container da seta na página About Us */
+.about-us-team-arrow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: -20px 0 60px 0; /* Margem negativa no topo para aproximar da intro */
+    width: 100%;
+}
+
+.about-us-team-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #ad4640;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.about-us-team-arrow {
+    animation: bounceTeamArrow 2s infinite;
+}
+
+/* Animação suave para a seta */
+@keyframes bounceTeamArrow {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(8px);
+    }
+    60% {
+        transform: translateY(4px);
+    }
+}
+
+
+
+/* ==========================================================================
+   CONTACT US
+   ========================================================================== */
+
+.divider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 0;
+    width: 100%;
+    perspective: 1000px; /* Ajuda a manter a fluidez visual */
+}
+
+.ular-ball {
+    width: 80px;
+    height: auto;
+    will-change: transform; /* Otimiza a performance para o browser */
+    transition: transform 0.1s ease-out; /* Suaviza o movimento */
+}
+/* -------------------------Formulário----------------------*/
+.contact-page {
+    padding-top: 140px; /* Reduzi ligeiramente */
+    padding-bottom: 50px;   /* Removi o padding de baixo */
+    display: flex;
+    justify-content: center;
+    /* min-height: 100vh;  <-- REMOVE OU COMENTA ESTA LINHA */
+}
+
+.contact-wrapper {
+    display: flex;
+    max-width: 1100px;
+    width: 90%;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+/* Lado Esquerdo */
+.contact-info {
+    flex: 1;
+    color: #ad4640;
+}
+
+.contact-info h1 {
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.contact-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 400px;
+    text-align: justify;
+}
+
+.contact-details {
+    margin-top: 50px;
+}
+
+.contact-details p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Formulário à Direita */
+.contact-form-container {
+    flex: 1.5;
+}
+
+.minimal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 13px;
+    color: rgba(173, 70, 64, 0.7);
+    margin-bottom: 5px;
+}
+
+/* Efeito de Linha Minimalista */
+.minimal-form input, 
+.minimal-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ad4640; /* Apenas a linha de baixo */
+    padding: 10px 0;
+    color: #ad4640;
+    outline: none;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+.minimal-form input:focus, 
+.minimal-form textarea:focus {
+    border-bottom-width: 2px;
+}
+
+/* Botão Redondo com Seta */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    background-color: #ad4640;
+    color: #f4f1ee;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px; /* Botão arredondado como no exemplo */
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: scale(1.05);
+    background-color: #8c3530;
+}
+
+.arrow {
+    font-size: 18px;
+}
+
+/* Ajustes para Telemóvel */
+@media (max-width: 900px) {
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/*-----------------Faq's----------------------------------------*/
+/* SECÇÃO FAQ */
+
+.faq-section {
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.faq-header {
+    margin-bottom: 60px;
+}
+
+.faq-header h2 {
+    color: #ad4640;
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.faq-contact-btn {
+    display: inline-block;
+    background-color: #ad4640;
+    color: #f4f1ee;
+    padding: 10px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.faq-contact-btn:hover {
+    transform: scale(1.05);
+}
+
+/* GRID DE DUAS COLUNAS */
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(173, 70, 64, 0.3);
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ad4640;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: #ad4640;
+    opacity: 0.8;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Quando estiver aberto (via JS) */
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Altura suficiente para o texto */
+    padding-bottom: 20px;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(180deg);
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+    font-size: 12px;
+}
+
+/* Responsividade */
+@media (max-width: 850px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   PORTFOLIO
+   ========================================================================== */
+
+/* Título our Work------------------------------*/
+/* Estilos do Cabeçalho */
+.portfolio-header {
+    margin-top: 120px;
+    margin-bottom: 3px; /* Espaço entre o texto e as fotos */
+    max-width: 800px;    /* Limita a largura do texto para não ficar muito corrido */
+}
+
+.portfolio-subtitle {
+    display: block;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #ad4640; /* Teu tom terracota */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.portfolio-title {
+    font-family: 'Gloock', serif;
+    font-size: clamp(40px, 6vw, 64px); /* Tamanho responsivo */
+    color: #ad4640;
+    margin: 0 0 25px 0;
+    line-height: 1.1;
+}
+
+.portfolio-intro {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ad4640;
+    font-family: 'Quicksand', sans-serif; /* Ou a tua fonte de corpo de texto */
+    text-align: justify;
+}
+
+.portfolio-intro strong {
+    color: #ad4640;
+    font-weight: 600;
+}
+
+/* Ajuste na Wrapper para acomodar o novo header */
+.portfolio-section-wrapper {
+    max-width: 1300px;
+    margin: 100px auto; /* Aumentei o espaço no topo da página */
+    padding: 0 40px;
+}
+
+
+
+/*-----------------See ular projects------*/
+.see-more-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0 60px 0; /* Espaçamento entre texto e grelha */
+    width: 100%;
+}
+
+.see-more-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #ad4640;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.scroll-arrow {
+    animation: bounceArrow 2s infinite;
+}
+
+/* Animação de "quicar" suave */
+@keyframes bounceArrow {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(10px);
+    }
+    60% {
+        transform: translateY(5px);
+    }
+}
+
+/* Se quiseres que a seta seja clicável para levar à grelha */
+.see-more-container {
+    cursor: pointer;
+}
+
+/* Faz o deslize ser suave */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Limpeza do estilo do link */
+.see-more-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: inherit;
+}
+
+
+/* Capas projetos --------------------------------------------*/
+/* Grelha de 3 Colunas */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1300px;
+    margin: 40px auto;
+}
+
+/* Cartão do Projeto */
+.portfolio-item {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4 / 5;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+}
+
+/* Overlay no Hover */
+.portfolio-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(244, 232, 228, 0.6); /* Bege opaco no hover */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio-mini-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ad4640; /* Terracota */
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.portfolio-overlay h3 {
+    font-family: 'Gloock', serif;
+    font-size: 26px;
+    color: #333;
+    margin: 0;
+}
+
+/* Animações ao passar o rato */
+.portfolio-item:hover img {
+    transform: scale(1.1);
+    filter: blur(3px) brightness(0.8);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+
+
+/* --- RESPONSIVIDADE MOBILE --- */
+@media (max-width: 850px) {
+    
+    /* Faz a grelha de projetos passar de 3 para 1 coluna */
+    .portfolio-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px; /* Reduzi um pouco o espaço entre cartões no mobile */
+        padding: 0 20px; /* Margem interna para não colarem aos bordos do ecrã */
+    }
+
+    /* Ajusta o wrapper principal para ter menos espaço no mobile */
+    .portfolio-section-wrapper {
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    /* Ajusta o título para não ficar gigante em ecrãs pequenos */
+    .portfolio-header {
+        margin-top: 80px;
+        text-align: left;
+    }
+
+    .portfolio-title {
+        font-size: 32px; /* Tamanho mais equilibrado para telemóvel */
+    }
+
+    .portfolio-intro {
+        font-size: 16px;
+    }
+
+    /* Opcional: faz com que o overlay (título do projeto) 
+       esteja sempre visível no mobile, já que não há "hover" com rato */
+    .portfolio-overlay {
+        opacity: 1;
+        background: rgba(244, 232, 228, 0.4); /* Mais suave para ver a foto */
+    }
+    
+    .portfolio-item img {
+        filter: brightness(0.9);
+    }
+}
+
+
+
+/* --- ESTILO COMING SOON --- */
+
+/* 1. Efeito Preto e Branco / Bege na Imagem */
+.item-coming-soon img {
+    filter: grayscale(100%) sepia(20%) brightness(0.7); /* Grayscale total + toque bege (sepia) */
+    pointer-events: none; /* Opcional: impede que pareça clicável */
+}
+
+/* 2. Estilo do texto "Coming Soon" a meio */
+.coming-soon-label {
+    display: block;
+    margin-top: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ad4640; /* Teu tom terracota */
+    border: 1px solid #ad4640;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* 3. Manter o overlay sempre visível ou mais escuro para estes itens */
+.item-coming-soon .portfolio-overlay {
+    opacity: 1; /* Fica sempre visível para se perceber que não é um erro */
+    background: rgba(244, 232, 228, 0.7); /* O teu bege característico */
+}
+
+/* 4. Remover o efeito de zoom no hover para não enganar o utilizador */
+.item-coming-soon:hover img {
+    transform: none;
+    filter: grayscale(100%) sepia(30%) brightness(0.6);
+}
+
+.item-coming-soon {
+    cursor: default; /* Mostra que não é clicável ainda */
+}
+
+
+
+
+/* ==========================================================================
+   PORTFOLIO - TEMPLATES PARA PÁGINA DE CADA PROJETO
+   ========================================================================== */
+
+/* ==========================================================================
+   Intro dos projetos */
+.project-page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 40px 60px 40px; /* Alinhamento vertical e horizontal */
+}
+
+/* --- INTRODUÇÃO --- */
+.project-header-layout { display: flex; justify-content: space-between; margin-bottom: 10px; }
+/* --- CONFIGURAÇÃO PARA PC (Desktop) --- */
+.project-logo-box img { 
+    height: 70px; /* Aumentei um pouco para o PC, ajusta a gosto */
+    width: auto; 
+}
+
+.status-stamp-box img { 
+    width: 100px; /* Um pouco maior no PC para ter detalhe */
+    height: auto; 
+    opacity: 70%;
+}
+
+/* --- CONFIGURAÇÃO PARA MOBILE (Telemóveis e Tablets) --- */
+@media (max-width: 768px) {
+    .project-logo-box img { 
+        height: 50px; /* O tamanho que tinhas antes fica bem no mobile */
+        width: auto; 
+    }
+
+    .status-stamp-box img { 
+        width: 70px;  /* O tamanho que tinhas antes */
+        height: auto; 
+        opacity: 70%;
+    }
+}
+
+
+.project-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-top: 2px; }
+.intro-image-container { width: 100%; aspect-ratio: 1 / 1.2; overflow: hidden; }
+.intro-image-container img { width: 100%; height: 100%; object-fit: cover; }
+.intro-text-container { font-size: 15px; line-height: 1.7; color: #333; text-align: justify;}
+.status-highlight { font-weight: 600; margin-top: 25px; }
+
+
+
+/* Carrossel intro Lux ==========================================================================*/
+/* O contentor pai tem de ser a âncora */
+.intro-image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1.2;
+    position: relative; /* CRUCIAL para as setas não fugirem */
+    overflow: hidden;
+    border-radius: 0; /* Como pediste, sem redondos */
+}
+
+.intro-carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* As Setas agora dentro da imagem */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.4); /* Fundo semi-transparente */
+    color: #333;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10; /* Garante que fica por cima da imagem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.carousel-arrow:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-arrow.left {
+    left: 15px; /* Margem interna da seta esquerda */
+}
+
+.carousel-arrow.right {
+    right: 15px; /* Margem interna da seta direita */
+}
+
+/* O Contador dentro da imagem no canto inferior */
+.carousel-counter {
+    position: absolute;
+    bottom: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 13px;
+    z-index: 10;
+    pointer-events: none; /* Para não interferir no clique */
+}
+
+
+
+
+/* ==========================================================================
+   Carrossel Horizontal a ocupar total horizontal */
+
+.project-carousel-container {
+    position: relative;
+    width: 100%; /* Ocupa 100% do pai, alinhando com os 40px de padding */
+    margin-top: 80px;
+    padding: 0;
+}
+
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 0; /* Essencial para alinhar bordas */
+    scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+    scroll-snap-align: center;
+    object-fit: cover;
+}
+
+/* --- SETAS E CONTADOR --- */
+.carousel-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px);
+    color: #ad4640; border: none; width: 50px; height: 50px;
+    border-radius: 50%; cursor: pointer; z-index: 10; font-size: 20px;
+}
+.carousel-arrow.left { left: 20px; }
+.carousel-arrow.right { right: 20px; }
+
+.carousel-counter {
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px);
+    color: #ad4640; padding: 8px 20px; border-radius: 30px;
+    font-size: 13px; font-weight: 600; z-index: 11;
+}
+
+/* --- SETA FLUTUANTE VOLTAR --- */
+.back-nav-floating { position: fixed; left: 20px; top: 50%; transform: translateY(-50%); text-decoration: none; z-index: 10001; }
+.back-nav-sphere { 
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 80px; height: 80px; background: rgba(255, 255, 255, 0.3); border-radius: 50%;
+    backdrop-filter: blur(8px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+.back-nav-text { font-size: 9px; text-transform: uppercase; color: #ad4640; margin-top: 4px; font-weight: 600; }
+
+/* --- RESPONSIVIDADE MOBILE --- */
+@media (max-width: 850px) {
+    .project-page-content { padding: 100px 25px 40px 25px; }
+    .project-intro-grid { grid-template-columns: 1fr; gap: 30px; }
+    .intro-text-container { order: -1; }
+    .carousel-arrow { display: none; }
+    .back-nav-sphere { width: 65px; height: 65px; }
+}
+
+/* ==========================================================================
+   2 Vídeos Verticais*/
+/* A Grid que alinha com as margens laterais */
+.project-video-dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 20px;                      /* Espaço entre os vídeos */
+    width: 100%;
+    margin-top: 80px;
+    box-sizing: border-box;
+}
+
+/* O contentor que manda no formato vertical */
+.video-item-container {
+    width: 100%;
+    aspect-ratio: 1 / 1.2;          /* Formato vertical fixo */
+    overflow: hidden;               /* Esconde o que sair fora do retângulo */
+    position: relative;
+}
+
+/* O vídeo que é forçado a preencher tudo */
+.project-video {
+    width: 100% !important;
+    height: 100% !important;        /* Força a altura a preencher o 1.2 */
+    object-fit: cover;              /* Faz o "crop" automático sem distorcer */
+    object-position: center;        /* Garante que o centro do vídeo é o foco */
+    display: block;
+}
+
+/* Ajuste para telemóvel */
+@media (max-width: 850px) {
+    .project-video-dual-grid {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+    }
+}
+
+
+/* ==========================================================================
+   2 Imagens horizontal
+/* --- Grelha Dupla de Imagens Horizontais --- */
+.project-image-horizontal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 20px;                      /* Mantém o mesmo espaçamento dos vídeos */
+    width: 100%;
+    margin-top: 20px;               /* Espaço pequeno se quiseres que fiquem coladas ao bloco de cima, ou 80px para separar */
+    box-sizing: border-box;
+}
+
+.horizontal-item-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;           /* Proporção horizontal (formato cinema) */
+    overflow: hidden;
+    background-color: #f4e8e4;
+}
+
+.horizontal-item-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;              /* Preenche o retângulo horizontal sem distorcer */
+    object-position: center;
+    display: block;
+}
+
+/* --- Ajuste Mobile --- */
+@media (max-width: 850px) {
+    .project-image-horizontal-grid {
+        grid-template-columns: 1fr; /* No telemóvel ficam uma por baixo da outra */
+        margin-top: 20px;
+    }
+}
+
+
+
+/* ==========================================================================
+   Imagem Horizontal Única (Simples e Alinhada)
+   ========================================================================== */
+
+.project-single-full-image {
+    width: 100%;
+    margin-top: 80px; /* Mesma distância que usas no carrossel e vídeos */
+    line-height: 0;   /* Remove espaços brancos indesejados abaixo da imagem */
+}
+
+.project-single-full-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16 / 9; /* Mantém a proporção horizontal que combinámos */
+}
+
+/* --- Ajuste Mobile --- */
+@media (max-width: 850px) {
+    .project-single-full-image {
+        margin-top: 40px; /* Reduz o espaço no telemóvel para condizer com o resto */
+    }
+}
+
+
+/* ==========================================================================
+   CARROSSEL + VÍDEO LADO A LADO (PROPORÇÃO 1:1.2)
+   ========================================================================== */
+
+.project-mixed-dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.mixed-item-container {
+    width: 100%;
+    aspect-ratio: 1 / 1.2;
+    overflow: hidden;
+    position: relative;
+    line-height: 0;
+}
+
+.mixed-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.mixed-carousel-track::-webkit-scrollbar { display: none; }
+
+.mixed-carousel-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+
+/* Contador (Igual ao teu carrossel horizontal) */
+.mixed-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    color: #ad4640;
+    padding: 15px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* Setas */
+.mixed-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    color: #ad4640;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+.mixed-nav.prev { left: 10px; }
+.mixed-nav.next { right: 10px; }
+
+@media (max-width: 850px) {
+    .project-mixed-dual-grid { grid-template-columns: 1fr; margin-top: 40px; }
+}
+
+
+/* ==========================================================================
+Imagem e video verticais
+*/
+
+/* Garante que a imagem estática preenche o contentor 1:1.2 */
+.project-static-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* O resto (project-mixed-dual-grid, mixed-item-container, etc.) 
+   já deve estar no teu ficheiro conforme o código anterior */

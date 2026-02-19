@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ular Design Studio</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!--------Googlefonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!------------------------Header e Navegação----------->
+    <header id="mainHeader">
+        <nav id="mainNav">
+            <div class="nav-links-desktop">
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <div class="logo">
+                    <a href="MainPage.html"><img src="Logo_Trevo.png" alt="Ular"></a>
+                </div>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+           
+               
+
+            <div class="mobile-logo-button" onclick="toggleMenu()">
+                <img src="Logo_Trevo.png" alt="Ular">
+            <div class="menu-indicator-wrapper">
+            <span class="menu-text-indicator">menu</span>
+                <div class="menu-arrow">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!------Mobile version-->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="MainPage.html">Main Page</a>
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+        </nav>
+    </header>
+<!------------------------Fim Header e Navegação----------->
+
+
+<!------------------------Portfolio our work- titulo----------->
+<div class="portfolio-section-wrapper">
+    <div class="portfolio-header">
+        <span class="portfolio-subtitle">Portfolio</span>
+        <h1 class="portfolio-title">Our Work</h1>
+        <p class="portfolio-intro">
+            We develop residential and commercial interior design projects, tailoring each service to the goals of every client. 
+            Our experience includes commercial projects ranging from restaurants to partnerships with 
+            VITAE – Association for Solidarity and International Development, 
+            as well as residential projects, covering both interior and exterior living spaces.
+        </p>
+    </div>
+
+    <div class="portfolio-grid">
+        </div>
+</div>
+
+<!--------------------------See Ular projects------------>
+<div class="see-more-container">
+    <a href="#portfolio-grid-start" class="see-more-link">
+        <span class="see-more-text">See Ular projects</span>
+        <div class="scroll-arrow">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </a>
+</div>
+
+<!-------------------Imagens capa-->
+
+    <div class="portfolio-grid" id="portfolio-grid-start">
+    <a href="R2501_2785_Morgado.html" class="portfolio-item">
+        <img src="R2501_2785_Morgado.jpg" alt="Impostor">
+        <div class="portfolio-overlay">
+            <span class="portfolio-mini-title">R2501_2785</span>
+            <h3>Morgado</h3>
+        </div>
+    </a>
+
+      <a href="C2410_2530_impostor.html" class="portfolio-item">
+        <img src="C2410_2530_impostor_02_01.jpeg" alt="Impostor">
+        <div class="portfolio-overlay">
+            <span class="portfolio-mini-title">C2410_2530</span>
+            <h3>Impostor</h3>
+        </div>
+    </a>
+
+      <a href="R2406_2970_bungallow.html" class="portfolio-item">
+        <img src="R2406_2970_capa.jpg" alt="Bungallow">
+        <div class="portfolio-overlay">
+            <span class="portfolio-mini-title">R2406_2970</span>
+            <h3>Bungallow</h3>
+        </div>
+    </a>
+
+      <a href="R2402_6731_Lux.html" class="portfolio-item">
+        <img src="R2402_6731_Lux_02_01.jpeg" alt="Lux">
+        <div class="portfolio-overlay">
+            <span class="portfolio-mini-title">R2402_6731</span>
+            <h3>Lux</h3>
+        </div>
+    </a>
+
+          <a href="R2504_2785_attic.html" class="portfolio-item">
+        <img src="R2504_2785_02_03.png" alt="Attic">
+        <div class="portfolio-overlay">
+            <span class="portfolio-mini-title">R2504_2785</span>
+            <h3>Attic</h3>
+        </div>
+    </a>
+          <a href="R2503_2785_laranjeira.html" class="portfolio-item">
+        <img src="R2503_2785_Capa.png" alt="Laranjeira">
+        <div class="portfolio-overlay">
+            <span class="portfolio-mini-title">R2503_2785</span>
+            <h3>Laranjeira</h3>
+        </div>
+    </a>
+    </div>
+
+    <!------------------Bolaentre formulário e Faq's-->
+<div class="divider-container">
+    <img src="sticker_duploaa.png" alt="Ular Logo" class="ular-ball">
+</div>
+
+<!--- Espaço para projetos futuros--->
+<div class="portfolio-grid" id="portfolio-grid-start">
+
+    <div class="portfolio-item item-coming-soon">
+    <img src="R2508_6830_Thefigbergvilla_neve.jpg" alt="Coming Soon"> <div class="portfolio-overlay">
+        <span class="portfolio-mini-title">R2508_6830</span>
+        <h3>The Figberg Villa</h3>
+        <span class="coming-soon-label">Coming Soon</span>
+    </div>
+</div>
+
+<div class="portfolio-item item-coming-soon">
+    <img src="Cópia pa_Cópia pa-42.jpeg" alt="Coming Soon">
+    <div class="portfolio-overlay">
+        <span class="portfolio-mini-title">R2505_2530</span>
+        <h3>Moita</h3>
+        <span class="coming-soon-label">Coming Soon</span>
+    </div>
+</div>
+
+<div class="portfolio-item item-coming-soon">
+    <img src="R2412_2645_Patio11_obra.jpeg" alt="Coming Soon">
+    <div class="portfolio-overlay">
+        <span class="portfolio-mini-title">R2412_2645</span>
+        <h3>Patio 11</h3>
+        <span class="coming-soon-label">Coming Soon</span>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+<!----------------------------Footer------------------------------>
+<footer class="footer">
+  <div class="footer-overlay">
+
+    <div class="footer-left">
+      <a href="Contact us" class="contact-us">
+        <img src="contact us.png" alt="Contact us">
+      </a>
+
+      <div class="email">
+        <img src="email_logo.png" alt="Email">
+        <a>ular.designstudio@gmail.com</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/ular.designstudio" target="_blank">
+          <img src="logo_instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@ular.designstudio" target="_blank">
+          <img src="logo_tiktok.png" alt="TikTok">
+        </a>
+
+        <span class="social-text">ular.designstudio</span>
+      </div>
+      
+      
+    </div>
+
+    <div class="footer-right">
+      <img src="Ular_logo_primario.png" alt="Ular Design Studio">
+    </div>
+
+  </div>
+</footer>
+
+
+<!-------------------Javascript------------------------------> <script> // Lógica Modal function openProject(projectId) { const modal = document.getElementById('projectModal'); const modalContent = document.getElementById('modalContent'); // Aqui podes adicionar a lógica para carregar o conteúdo do projeto com base no ID modalContent.innerHTML = `<h2>${projectId}</h2><p>Detalhes do projeto...</p>`; modal.style.display = 'flex'; } function closeProject() { const modal = document.getElementById('projectModal'); modal.style.display = 'none'; } </script>
+<script>
+   //------------------Header e Navegação
+        // Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const header = document.getElementById("mainHeader");
+            menu.classList.toggle("open");
+            header.classList.toggle("menu-open");
+        }
+    //------------------Fim Header e Navegação
+
+    //-------------movimento bola-------------
+        window.addEventListener('scroll', function() {
+    // Seleciona a imagem da bola
+    const ball = document.querySelector('.ular-ball');
+    
+    // Obtém a posição atual do scroll
+    let rotation = window.scrollY;
+    
+    // Aplica a rotação. Podes multiplicar por 0.5 se quiseres que gire mais devagar
+    // ou por 2 se quiseres que gire muito rápido.
+    ball.style.transform = `rotate(${rotation * 0.5}deg)`;
+});
+</script>
+
+
+</body>
+</html>

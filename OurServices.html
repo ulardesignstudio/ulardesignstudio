@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ular Design Studio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--------Googlefonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!------------------------Header e Navegação----------->
+    <header id="mainHeader">
+        <nav id="mainNav">
+            <div class="nav-links-desktop">
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <div class="logo">
+                    <a href="MainPage.html"><img src="Logo_Trevo.png" alt="Ular"></a>
+                </div>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+           
+               
+
+            <div class="mobile-logo-button" onclick="toggleMenu()">
+                <img src="Logo_Trevo.png" alt="Ular">
+            <div class="menu-indicator-wrapper">
+            <span class="menu-text-indicator">menu</span>
+                <div class="menu-arrow">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!------Mobile version-->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="MainPage.html">Main Page</a>
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+        </nav>
+    </header>
+<!------------------------Fim Header e Navegação----------->
+
+
+<!----------Timeline-->
+<div class="timeline-section-height">
+    <div class="timeline-sticky-container">
+        <div class="timeline-horizontal-track" id="horizontalTrack">
+            <img src="Workwithus.png" alt="Linha do Tempo" class="timeline-image">
+        </div>
+    </div>
+</div>
+
+<!------------------Separador entre formulário e Faq's-->
+<div class="divider-container">
+    <img src="bola separacao pagina.png" alt="Ular Logo" class="ular-ball">
+</div>
+
+<!-------------Expertise-->
+<div class="services-expertise-header">
+    <span class="services-expertise-subtitle">Our Expertise</span>
+    <h2 class="services-expertise-title">Everything we do</h2>
+</div>
+
+<div class="services-master-wrapper">
+
+    <div class="services-tabs-container">
+        <input type="radio" name="services" id="service1" checked>
+        <label for="service1" class="tab-label">Residential Projects</label>
+        
+        <input type="radio" name="services" id="service2">
+        <label for="service2" class="tab-label">Commercial Projects</label>
+
+        <div class="tab-content-wrapper">
+            <div class="content" id="content1">
+                <span class="category-tag">The Services</span>
+                <h2>Residential</h2>
+                <div class="text-side">
+                    <p>We develop residential interior design projects, ranging from focused interventions to full-scale renovations, always with a core focus on functionality, comfort, and the way a space is experienced in daily life. Each project is conceived with a practical, bespoke approach, ensuring a perfect balance between aesthetics and everyday use. </div>
+            </div>
+            <div class="content" id="content2">
+                <span class="category-tag">The Services</span>
+                <h2>Commercial Projects</h2>
+                <div class="text-side">
+                    <p>We create functional, coherent commercial spaces with a distinct identity, seamlessly aligned with the brand and its business objectives.
+Our process involves defining the concept and atmosphere, studying spatial flow, and enhancing the customer journey. This ensures the space meets both operational requirements and the perception of the final client.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="services-expertise-grid">
+        <div class="services-expertise-card">
+            <h3>Space Planning</h3>
+            <p>Optimizing circulation and furniture placement to ensure every square meter is functional and fluid.</p>
+        </div>
+        <div class="services-expertise-card">
+            <h3>Moodboard</h3>
+            <p>A curated visual selection of textures and colors that define the soul of the project.</p>
+        </div>
+        <div class="services-expertise-card">
+            <h3>3D Layouts</h3>
+            <p>Realistic visualization of your future space to validate choices with total confidence.</p>
+        </div>
+        <div class="services-expertise-card">
+            <h3>Material Selection</h3>
+            <p>Guidance in choosing finishes and fabrics that balance durability with timeless design.</p>
+        </div>
+        <div class="services-expertise-card">
+            <h3>Styling & Staging</h3>
+            <p>The final touch: selecting decor and textiles that add warmth and personality to the space.</p>
+        </div>
+        <div class="services-expertise-card">
+            <h3>Project Management</h3>
+            <p>Overseeing every phase, from coordination to budget control, for a stress-free experience.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-----Let'sconnect botão-->
+<div class="cta-button-container">
+    <a href="ContactUs.html" class="work-with-us-btn">Let's Connect</a>
+</div>
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-overlay">
+
+    <div class="footer-left">
+      <a href="Contact us" class="contact-us">
+        <img src="contact us.png" alt="Contact us">
+      </a>
+
+      <div class="email">
+        <img src="email_logo.png" alt="Email">
+        <a>ular.designstudio@gmail.com</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/ular.designstudio" target="_blank">
+          <img src="logo_instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@ular.designstudio" target="_blank">
+          <img src="logo_tiktok.png" alt="TikTok">
+        </a>
+
+        <span class="social-text">ular.designstudio</span>
+      </div>
+      
+      
+    </div>
+
+    <div class="footer-right">
+      <img src="Ular_logo_primario.png" alt="Ular Design Studio">
+    </div>
+
+  </div>
+</footer>
+
+
+
+<!-------------------Javascripts-->
+<script> 
+
+   //------------------Header e Navegação
+        // Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const header = document.getElementById("mainHeader");
+            menu.classList.toggle("open");
+            header.classList.toggle("menu-open");
+        }
+    //------------------Fim Header e Navegação
+
+
+
+//--------------------------Timeline
+const track = document.getElementById('horizontalTrack');
+const section = document.querySelector('.timeline-section-height');
+
+window.addEventListener('scroll', () => {
+    // Calcula a posição do topo da seção em relação ao ecrã
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollPos = window.scrollY;
+
+    // Verifica se o utilizador está dentro da seção da linha do tempo
+    if (scrollPos >= sectionTop && scrollPos <= (sectionTop + sectionHeight - windowHeight)) {
+        // Calcula a percentagem do scroll dentro da seção
+        const scrolledInSection = scrollPos - sectionTop;
+        const maxScroll = sectionHeight - windowHeight;
+        const percentage = scrolledInSection / maxScroll;
+
+        // Calcula quanto a imagem deve mover para a esquerda
+        // O valor 100 é para garantir que ela saia totalmente do ecrã
+        const trackWidth = track.offsetWidth;
+        const moveX = percentage * (trackWidth - window.innerWidth);
+
+        track.style.transform = `translateX(-${moveX}px)`;
+    }
+});
+
+
+
+//-------------movimento bola-------------
+        window.addEventListener('scroll', function() {
+    // Seleciona a imagem da bola
+    const ball = document.querySelector('.ular-ball');
+    
+    // Obtém a posição atual do scroll
+    let rotation = window.scrollY;
+    
+    // Aplica a rotação. Podes multiplicar por 0.5 se quiseres que gire mais devagar
+    // ou por 2 se quiseres que gire muito rápido.
+    ball.style.transform = `rotate(${rotation * 0.5}deg)`;
+});
+</script>
+
+
+</body>
+</html>

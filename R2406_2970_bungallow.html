@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morgado - Ular Design Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!------------------------Header e Navegação----------->
+    <header id="mainHeader">
+        <nav id="mainNav">
+            <div class="nav-links-desktop">
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <div class="logo">
+                    <a href="MainPage.html"><img src="Logo_Trevo.png" alt="Ular"></a>
+                </div>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+           
+               
+
+            <div class="mobile-logo-button" onclick="toggleMenu()">
+                <img src="Logo_Trevo.png" alt="Ular">
+            <div class="menu-indicator-wrapper">
+            <span class="menu-text-indicator">menu</span>
+                <div class="menu-arrow">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!------Mobile version-->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="MainPage.html">Main Page</a>
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="OurServices.html">Our services</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            </div>
+        </nav>
+    </header>
+<!------------------------Fim Header e Navegação----------->
+
+
+    <a href="Portfolio.html" class="back-nav-floating">
+        <div class="back-nav-sphere">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ad4640" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span class="back-nav-text">Portfolio</span>
+        </div>
+    </a>
+
+    <main class="project-page-content">
+        
+        <div class="project-intro-section">
+            <div class="project-header-layout">
+                <div class="project-logo-box">
+                    <img src="R2406_2970_01_01.png" alt="Morgado">
+                </div>
+                <div class="status-stamp-box">
+                    <img src="In the making.png" alt="In the making">
+                </div>
+            </div>
+
+<div class="project-intro-grid">
+    <div class="intro-image-container">
+        <img src="R2406_2970_capa.jpg" alt="Bungalow Render">
+    </div>
+    <div class="intro-text-container">
+        
+        <p><strong>The Concept</strong><br>
+        This project involved the remodelling of a bungalow, focusing on refreshing the existing space while integrating original furniture pieces. The goal was to create a versatile environment that adapts to different needs.</p>
+
+        <p><strong>Design & Layout</strong><br>
+        We prioritised clever storage solutions and a flexible layout. Inspired by the beach and poolside setting, the design brings a coastal freshness indoors, using 3D visualisations to define the spatial outcome.</p>
+
+        <p><strong>Our Intervention</strong><br>
+        Our work covered every stage, from initial layout optimisation to the complete interior decoration of the kitchen, living room, bedrooms, and bathrooms, including the outdoor area.</p>
+
+        <p><strong>The Result</strong><br>
+        Through detailed moodboards and extensive furniture research, we provided personalised guidance in every selection to ensure a cohesive and high-end result.</p>
+        
+    </div>
+</div>
+
+
+<div class="project-video-dual-grid">
+    <div class="video-item-container">
+        <img src="bteste.png" alt="Project Detail 1" class="project-video">
+    </div>
+    
+    <div class="video-item-container">
+        <img src="b2teste.png" alt="Project Detail 2" class="project-video">
+    </div>
+</div>
+
+
+
+        <section class="project-carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <img src="R2406_2970_03_01.jpg" alt="01">
+                <img src="R2406_2970_03_02.jpg" alt="02">
+                <img src="R2406_2970_03_03.jpg" alt="03">
+                <img src="R2406_2970_03_04.jpg" alt="04">
+                <img src="R2406_2970_03_05.jpg" alt="05">
+                <img src="R2406_2970_03_06.jpg" alt="06">
+                <img src="R2406_2970_03_07.jpg" alt="07">
+                <img src="R2406_2970_03_08.jpg" alt="08">
+            </div>
+            
+            <div class="carousel-counter" id="carouselCounter">1 / 8</div>
+            
+            <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#10094;</button>
+            <button class="carousel-arrow right" onclick="scrollCarousel(1)">&#10095;</button>
+        </section>
+
+
+
+
+
+
+</main>
+
+
+
+
+<footer class="footer">
+  <div class="footer-overlay">
+
+    <div class="footer-left">
+      <a href="Contact us" class="contact-us">
+        <img src="contact us.png" alt="Contact us">
+      </a>
+
+      <div class="email">
+        <img src="email_logo.png" alt="Email">
+        <a>ular.designstudio@gmail.com</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/ular.designstudio" target="_blank">
+          <img src="logo_instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@ular.designstudio" target="_blank">
+          <img src="logo_tiktok.png" alt="TikTok">
+        </a>
+
+        <span class="social-text">ular.designstudio</span>
+      </div>
+      
+      
+    </div>
+
+    <div class="footer-right">
+      <img src="Ular_logo_primario.png" alt="Ular Design Studio">
+    </div>
+
+  </div>
+</footer>
+
+
+<!-------------------Javascript---------------------> 
+    <script>
+        //------------------Header e Navegação
+        // Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const header = document.getElementById("mainHeader");
+            menu.classList.toggle("open");
+            header.classList.toggle("menu-open");
+        }
+        //------------------Fim Header e Navegação
+
+        // Lógica Carrossel
+        const track = document.getElementById('carouselTrack');
+        const counter = document.getElementById('carouselCounter');
+        const totalImages = 8; 
+
+        function scrollCarousel(direction) {
+            const scrollAmount = track.clientWidth; 
+            track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        track.addEventListener('scroll', () => {
+            const currentIndex = Math.round(track.scrollLeft / track.clientWidth) + 1;
+            counter.innerText = `${currentIndex} / ${totalImages}`;
+        });
+    </script>
+</body>
+</html>
